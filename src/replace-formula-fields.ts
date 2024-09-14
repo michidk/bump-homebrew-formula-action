@@ -4,9 +4,7 @@ export class UpgradeError extends Error {}
 
 function assertNewer(v1: string, v2: string): void {
   const c = compare(v1, v2)
-  if (c == 0) {
-    throw new UpgradeError(`the formula is already at version '${v1}'`)
-  } else if (c == -1) {
+  if (c == -1) {
     throw new UpgradeError(`the formula version '${v2}' is newer than '${v1}'`)
   }
 }
