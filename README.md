@@ -13,7 +13,7 @@ jobs:
     name: Bump Homebrew formula
     runs-on: ubuntu-latest
     steps:
-      - uses: mislav/bump-homebrew-formula-action@v3
+      - uses: michidk/bump-homebrew-formula-action@v3
         with:
           # By default, this will edit the `my_formula.rb` formula in
           # homebrew-core to update its "url" field to:
@@ -116,7 +116,7 @@ Repository parameters:
   ```
   {{formulaName}} {{version}}
 
-  Created by https://github.com/mislav/bump-homebrew-formula-action
+  Created by https://github.com/michidk/bump-homebrew-formula-action
   ```
 
 ### Environment variables
@@ -160,7 +160,7 @@ jobs:
         run: |
           echo "tag-name=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
 
-      - uses: mislav/bump-homebrew-formula-action@v3
+      - uses: michidk/bump-homebrew-formula-action@v3
         with:
           formula-name: my_formula
           formula-path: Formula/m/my_formula.rb
@@ -170,7 +170,7 @@ jobs:
           commit-message: |
             {{formulaName}} {{version}}
 
-            Created by https://github.com/mislav/bump-homebrew-formula-action
+            Created by https://github.com/michidk/bump-homebrew-formula-action
         env:
           COMMITTER_TOKEN: ${{ secrets.COMMITTER_TOKEN }}
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -194,7 +194,7 @@ jobs:
     name: Bump Homebrew formula
     runs-on: ubuntu-latest
     steps:
-      - uses: mislav/bump-homebrew-formula-action@v3
+      - uses: michidk/bump-homebrew-formula-action@v3
         with:
           formula-name: my_formula
           tag-name: ${{ github.event.inputs.tag-name }}
