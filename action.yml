@@ -1,6 +1,6 @@
-name: bump-homebrew-formula
-description: "Bump Homebrew formula after a new release"
-author: "@mislav"
+name: bump-homebrew-formula-reloaded
+description: "Bump Homebrew formula after a new release even if it is the same version"
+author: "@michidk"
 runs:
   using: node20
   main: "./lib/index.js"
